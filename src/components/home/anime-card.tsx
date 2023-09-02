@@ -1,31 +1,23 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { Anime, AnimeLanguage } from "@/api/types";
+import type { Anime } from "@/api/types";
 import { getUserConfig } from "@/utils";
-import { Card, CardContent } from "./ui/card";
-import { Badge } from "./ui/badge";
+import { Card, CardContent } from "../ui/card";
+import { Badge } from "../ui/badge";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "./ui/tooltip";
+} from "../ui/tooltip";
+import { getAnimeTitle } from "./logic";
 
 type AnimeCardProps = {
   anime: Anime;
 };
 
-const fallbackLanguage: AnimeLanguage = "native";
-
-const getAnimeTitle = (
-  title: Anime["title"],
-  displayAnimeLanguage: AnimeLanguage,
-) => {
-  return title[displayAnimeLanguage] ?? title[fallbackLanguage];
-};
-
-const AnimeCard = (props: AnimeCardProps) => {
+export const AnimeCard = (props: AnimeCardProps) => {
   const { anime } = props;
   const { displayAnimeLanguage } = getUserConfig();
 
@@ -88,5 +80,3 @@ const AnimeCard = (props: AnimeCardProps) => {
     </Card>
   );
 };
-
-export default AnimeCard;
