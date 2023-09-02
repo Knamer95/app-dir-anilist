@@ -57,8 +57,3 @@
     @apply bg-background text-foreground;
   }
 }
-
-/** Tailwind doesn't support :has currently, so we use custom classes for that */
-.anime-card:has(:hover) .anime-cover-image {
-  filter: brightness(1);
-}
