@@ -3,8 +3,8 @@ import { Inter } from "next/font/google";
 
 import { ModeToggle } from "@/components/mode-toggle";
 import { ThemeProvider } from "@/components/theme-provider";
-import "./globals.css";
 import { Input } from "@/components/ui/input";
+import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,15 +23,15 @@ export default function RootLayout(props: RootLayoutProps) {
     <html lang="en">
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="flex gap-x-2 p-3 bg-slate-900 items-center">
+          <div className="flex items-center gap-x-2 bg-slate-900 p-3">
             <p>Logo</p>
-            <Input className="flex-initial w-64" />
+            <Input className="w-64 flex-initial" />
             <div className="flex-initial">
               <ModeToggle />
             </div>
           </div>
 
-          {children}
+          <div className="content m-3">{children}</div>
         </ThemeProvider>
       </body>
     </html>
