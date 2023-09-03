@@ -26,7 +26,7 @@ export const AnimeCard = (props: AnimeCardProps) => {
   const DISPLAY_BADGE_AMOUNT = 2;
 
   return (
-    <Card className="relative h-[350px] w-[250px] overflow-hidden [&:has(:hover)_.anime-cover-image]:brightness-100">
+    <Card className="relative h-[350px] w-[250px] overflow-hidden [&:has(:hover)_.anime-cover-image]:brightness-[0.6]">
       <Link
         className="relative flex h-full items-end"
         href={`/anime/${anime.id}`}
@@ -34,7 +34,7 @@ export const AnimeCard = (props: AnimeCardProps) => {
         <Image
           src={anime.coverImage.large}
           alt={`${formattedTitle} cover`}
-          className="anime-cover-image object-cover brightness-[0.4] transition duration-300 hover:brightness-100"
+          className="anime-cover-image object-cover brightness-[1] transition duration-300 hover:brightness-[0.6]"
           fill
         />
         <CardContent className="relative z-10 basis-full bg-slate-800/60 px-3 py-2.5">
