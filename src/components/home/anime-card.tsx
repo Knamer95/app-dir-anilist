@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import type { Anime } from "@/api/types";
-import { getUserConfig } from "@/utils";
+import { type Anime } from "@/anilist-api/anime/client";
+import { getAnimeURL, getUserConfig } from "@/utils";
 import { Card, CardContent } from "../ui/card";
 import { Badge } from "../ui/badge";
 import {
@@ -29,12 +29,12 @@ export const AnimeCard = (props: AnimeCardProps) => {
     <Card className="relative h-[350px] w-[250px] overflow-hidden [&:has(:hover)_.anime-cover-image]:brightness-[0.6]">
       <Link
         className="relative flex h-full items-end"
-        href={`/anime/${anime.id}`}
+        href={getAnimeURL(anime)}
       >
         <Image
           src={anime.coverImage.large}
           alt={`${formattedTitle} cover`}
-          className="anime-cover-image object-cover brightness-[1] transition duration-300 hover:brightness-[0.6]"
+          className="anime-cover-image h-auto w-auto object-cover brightness-[1] transition duration-300 hover:brightness-[0.6]"
           fill
         />
         <CardContent className="relative z-10 basis-full bg-slate-800/60 px-3 py-2.5">
@@ -72,9 +72,9 @@ export const AnimeCard = (props: AnimeCardProps) => {
               <></>
             )}
           </div>
-          <p className="mt-3 line-clamp-2 text-sm text-slate-300">
+          {/* <p className="mt-3 line-clamp-2 text-sm text-slate-300">
             {anime.description}
-          </p>
+          </p> */}
         </CardContent>
       </Link>
     </Card>

@@ -1,4 +1,4 @@
-import type { Anime, AnimeLanguage } from "@/api/types";
+import { type Anime, type AnimeLanguage } from "@/anilist-api/anime/client";
 
 const fallbackLanguage: AnimeLanguage = "native";
 

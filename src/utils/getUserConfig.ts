@@ -1,4 +1,4 @@
-import { AnimeLanguage } from "@/api/types";
+import { type AnimeLanguage } from "@/anilist-api/anime/client";
 
 type UserConfig = {
   displayAnimeLanguage: AnimeLanguage;
