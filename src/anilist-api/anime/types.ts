@@ -1,3 +1,9 @@
+export type GetAnimePayload = {
+  perPage?: number;
+  page: number;
+  search?: string;
+};
+
 export type AnimeLanguage = "romaji" | "english" | "native";
 
 export type AnimeQuery = {
@@ -14,6 +20,9 @@ export type AnimeQuery = {
 export type Anime = {
   id: number;
   title: Record<AnimeLanguage, string | null>;
+  season: string;
+  seasonYear: number;
+  type: string;
   genres: string[] | null;
   episodes: number;
   coverImage: {
