@@ -1,7 +1,7 @@
-import { getClient } from "@/lib/client";
+import { type GetGQLPayload } from "@/anilist-api";
+import { getClient } from "@/lib/client-ssr";
 import { QUERY_GET_ANIME } from "../const";
 import type { AnimeQuery } from "../types";
-import { type GetGQLPayload } from "@/anilist-api";
 
 // TODO-mk - Change cache options, articles/docs for reference:
 // https://nextjs.org/docs/app/building-your-application/caching
